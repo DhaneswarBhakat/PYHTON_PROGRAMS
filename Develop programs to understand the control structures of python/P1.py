@@ -1,51 +1,24 @@
-# Control Structure Example
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
-# if-else statement
-age = 25
-if age >= 18:
-    print("You are an adult.")
-else:
-    print("You are a minor.")
+from random import randint
+number = randint(1,100)
 
-# if-elif-else statement
-grade = 75
-if grade >= 90:
-    print("You got an A.")
-elif grade >= 80:
-    print("You got a B.")
-elif grade >= 70:
-    print("You got a C.")
-else:
-    print("You need to improve.")
-
-# for loop
-numbers = [1, 2, 3, 4, 5]
-sum = 0
-for num in numbers:
-    sum += num
-print("Sum of numbers:", sum)
-
-# while loop
-count = 0
-while count < 5:
-    print("Count:", count)
-    count += 1
-
-# break and continue statements
-for i in range(10):
-    if i == 3:
-        continue  # Skip the rest of the code in the loop and move to the next iteration
-    if i == 7:
-        break  # Exit the loop completely
-    print(i)
-
-# Pass Statement Example
-
-numbers = [1, 2, 3, 4, 5]
-
-for num in numbers:
-    if num % 2 == 0:
-        pass  # Placeholder, no action needed for even numbers
+def check_guess(n):
+  for i in range(n, 0, -1):
+    print(f"You hava {i} attempts remaining to guess the number.")
+    guess_number = int(input("Make a guess: "))
+    if guess_number == number:
+      print(f"You got it! The answer was {guess_number}")
+      break
+    elif guess_number > number:
+      print("To high.")
     else:
-        print(num)  # Print odd numbers
+      print("To low.")
+    print("Guess again.")
 
+if difficulty == "easy":
+  check_guess(10)
+elif difficulty == "hard":
+  check_guess(5)

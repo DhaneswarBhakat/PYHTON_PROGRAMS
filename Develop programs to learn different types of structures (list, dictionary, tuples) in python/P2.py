@@ -1,43 +1,24 @@
-# Data Structures Example
+print("Welcome to the secret auction program.")
 
-# List
-fruits = ["apple", "banana", "cherry", "durian"]
-print("Fruits List:", fruits)
+auction_dictionarie = {}
 
-# Accessing list elements
-print("First fruit:", fruits[0])
-print("Last fruit:", fruits[-1])
+def find_highest_bidder(bidding_record):
+  highest_bit = 0
+  for bidder in bidding_record:
+    bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bit:
+      highest_bit = bid_amount
+      winner = bidder
+  print(f"The winner is {winner} with a bid of ${highest_bit}")
 
-# Modifying list elements
-fruits[1] = "mango"
-print("Modified Fruits List:", fruits)
-
-# Dictionary
-person = {
-    "name": "John Doe",
-    "age": 30,
-    "city": "New York"
-}
-print("\nPerson Dictionary:", person)
-
-# Accessing dictionary elements
-print("Name:", person["name"])
-print("Age:", person["age"])
-print("City:", person["city"])
-
-# Modifying dictionary elements
-person["age"] = 35
-person["country"] = "USA"
-print("Modified Person Dictionary:", person)
-
-# Tuple
-coordinates = (10, 20)
-print("\nCoordinates Tuple:", coordinates)
-
-# Accessing tuple elements
-print("X-coordinate:", coordinates[0])
-print("Y-coordinate:", coordinates[1])
-
-# Tuples are immutable, cannot be modified
-# coordinates[0] = 15  # This will result in an error
-
+while True:
+  name = input("What is your name?: ")
+  bit = int(input("What's your bit?: $"))
+  auction_dictionarie[name] = bit
+  print("Are there any other bidders? Type 'yes' or 'no'.")
+  bidder = input()
+  if bidder == "yes":
+    continue
+  else:
+    find_highest_bidder(auction_dictionarie)
+    break
