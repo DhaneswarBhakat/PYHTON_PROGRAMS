@@ -1,0 +1,15 @@
+f = open("file.txt", "w")
+f.write("\nStudent Details\n")
+f.close()
+
+f = open("file.txt", "a")
+name = input("Enter full name : ")
+f.write(f"Name : {name}\n")
+c = input("Enter class : ")
+f.write(f"Class : {c}\n")
+roll = input("Enter roll no. : ")
+f.write(f"Roll No. : {roll}\n")
+f.close()
+
+f = open("file.txt", "r")
+print(f.read())
