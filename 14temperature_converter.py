@@ -37,7 +37,7 @@ def calculate():
 
 
 # Button
-button = Button(text="Converter", command=calculate)
+button = Button(text="Converter ", command=calculate)
 button.config(padx=10, pady=10)
 button.grid(column=1, row=2)
 
