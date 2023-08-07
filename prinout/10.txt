@@ -1,0 +1,20 @@
+Name : Rahul Suryakant Salunkhe
+Class : MCA sem - II
+Roll No. : 55
+program 10 : Demonstrate implementation functional programming tools such as filter and reduce.
+                                                                                                       
+from functools import reduce
+
+# Example 1: Filtering Even Numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print("Even Numbers:", even_numbers)
+
+# Example 2: Reducing a List of Numbers
+numbers = [1, 2, 3, 4, 5]
+sum_of_numbers = reduce(lambda x, y: x + y, numbers)
+print("Sum of Numbers:", sum_of_numbers)
+                                                                                                    
+Output : 
+Even Numbers: [2, 4, 6, 8, 10]
+Sum of Numbers: 15
